@@ -45,7 +45,7 @@ if(NOT pystring_FOUND AND OCIO_INSTALL_EXT_PACKAGES AND NOT OCIO_INSTALL_EXT_PAC
 
     if(_pystring_TARGET_CREATE)
         if(MSVC)
-            set(pystring_CXX_FLAGS "${pystring_CXX_FLAGS} /EHsc")
+            set(pystring_CXX_FLAGS "${pystring_CXX_FLAGS} /EHsc $<$<BOOL:${ENABLE_ASAN}>:/fsanitize=address>")
         endif()
 
         string(STRIP "${pystring_CXX_FLAGS}" pystring_CXX_FLAGS)

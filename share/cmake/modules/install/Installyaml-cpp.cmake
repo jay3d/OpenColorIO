@@ -52,7 +52,7 @@ if(NOT yaml-cpp_FOUND AND OCIO_INSTALL_EXT_PACKAGES AND NOT OCIO_INSTALL_EXT_PAC
 
     if(_yaml-cpp_TARGET_CREATE)
         if(MSVC)
-            set(yaml-cpp_CXX_FLAGS "${yaml-cpp_CXX_FLAGS} /EHsc")
+            set(yaml-cpp_CXX_FLAGS "${yaml-cpp_CXX_FLAGS} /EHsc $<$<BOOL:${ENABLE_ASAN}>:/fsanitize=address>")
         endif()
 
         if(UNIX)
