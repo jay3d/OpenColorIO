@@ -352,12 +352,12 @@ configure_package_config_file(
     NO_CHECK_REQUIRED_COMPONENTS_MACRO
 )
 
-install(
+#[[install(
     EXPORT ${PROJECT_NAME}_EXPORTED_TARGETS
     DESTINATION ${OCIO_CONFIG_INSTALL_DIR}
     NAMESPACE ${PROJECT_NAME}::
     FILE ${OCIO_TARGETS_EXPORT_NAME}
-)
+)]]
 
 if (NOT BUILD_SHARED_LIBS)
     # Install custom macros used in the find modules.
