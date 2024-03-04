@@ -25,7 +25,7 @@ void SystemMonitorsImpl::getAllMonitors()
 
 } // namespace OCIO_NAMESPACE
 
-#elif __APPLE__
+#elif defined(__APPLE__) && !defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__)
 
 #include "SystemMonitor_macos.cpp"
 

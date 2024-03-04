@@ -296,7 +296,7 @@ target_link_libraries(OpenColorIO
 if(APPLE)
     target_link_libraries(OpenColorIO
         PRIVATE
-            "-framework Carbon"
+            #"-framework Carbon"
             "-framework IOKit"
     )
 endif()
